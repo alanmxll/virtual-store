@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../helpers/validators.dart';
+import '../../models/user.dart';
+import '../../models/user_manager.dart';
 
 class LoginScreen extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
@@ -73,8 +75,12 @@ class LoginScreen extends StatelessWidget {
                   child: RaisedButton(
                     onPressed: () {
                       if (formKey.currentState.validate()) {
-                        print(emailController.text);
-                        print(passwordController.text);
+                        context.read<UserManager>().signIn(
+                              User(
+                                email: emailController.text,
+                                password: passwordController.text,
+                              ),
+                            );
                       }
                     },
                     color: Theme.of(context).primaryColor,
