@@ -1,8 +1,8 @@
-import 'package:meta/meta.dart';
-
 class User {
+  String name;
   String email;
   String password;
+  String confirmPassword;
 
-  User({@required this.email, @required this.password});
+  User({this.email, this.password, this.name});
 }
