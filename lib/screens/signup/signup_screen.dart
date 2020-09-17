@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../helpers/validators.dart';
 import '../../models/user.dart';
+import '../../models/user_manager.dart';
 
 class SignUpScreen extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
@@ -126,7 +128,23 @@ class SignUpScreen extends StatelessWidget {
                           return;
                         }
 
-                        // userManager
+                        context.read<UserManager>().signUp(
+                              user: user,
+                              onSuccess: () {
+                                debugPrint('Success');
+                                // TODO: POP
+                              },
+                              onFail: (e) {
+                                scaffoldKey.currentState.showSnackBar(
+                                  SnackBar(
+                                    content: Text(
+                                      'Sign Up failed: $e',
+                                    ),
+                                    backgroundColor: Colors.red,
+                                  ),
+                                );
+                              },
+                            );
                       }
                     },
                     child: const Text(
