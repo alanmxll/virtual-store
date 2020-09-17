@@ -6,15 +6,15 @@ import 'models/user_manager.dart';
 import 'screens/base/base_screen.dart';
 
 Future<void> main() async {
-  runApp(MyApp());
-
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Provider(
+    return ChangeNotifierProvider(
       create: (_) => UserManager(),
       child: MaterialApp(
         title: 'Virtual Store',
