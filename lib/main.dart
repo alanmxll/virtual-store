@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'models/user_manager.dart';
 import 'screens/base/base_screen.dart';
+import 'screens/signup/signup_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -27,7 +28,20 @@ class MyApp extends StatelessWidget {
           ),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: BaseScreen(),
+        initialRoute: '/base',
+        onGenerateRoute: (settings) {
+          switch (settings.name) {
+            case '/signup':
+              return MaterialPageRoute(
+                builder: (_) => SignUpScreen(),
+              );
+            case '/base':
+            default:
+              return MaterialPageRoute(
+                builder: (_) => BaseScreen(),
+              );
+          }
+        },
       ),
     );
   }
