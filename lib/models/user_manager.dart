@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +11,9 @@ class UserManager extends ChangeNotifier {
   }
 
   final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  User user;
+  user_model.User user;
 
   bool _loading = false;
 
@@ -34,7 +36,7 @@ class UserManager extends ChangeNotifier {
         password: user.password,
       );
 
-      this.user = result.user;
+      await _loadCurrentUser(firebaseUser: result.user);
 
       onSuccess();
     } on FirebaseAuthException catch (e) {
@@ -56,6 +58,7 @@ class UserManager extends ChangeNotifier {
       );
 
       user.id = result.user.uid;
+      this.user = user;
 
       await user.saveData();
 
@@ -66,13 +69,16 @@ class UserManager extends ChangeNotifier {
     loading = false;
   }
 
-  void _loadCurrentUser() {
-    final User currentUser = auth.currentUser;
+  Future<void> _loadCurrentUser({User firebaseUser}) async {
+    final User currentUser = firebaseUser ?? auth.currentUser;
 
     if (currentUser != null) {
-      user = currentUser;
-      print('UID -> ${user.uid}');
+      final DocumentSnapshot document =
+          await firestore.collection('users').doc(currentUser.uid).get();
+
+      user = user_model.User.fromDocument(document);
+
+      notifyListeners();
     }
-    notifyListeners();
   }
 }
