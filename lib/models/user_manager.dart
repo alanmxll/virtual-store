@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/services.dart';
 
 import '../helpers/firebase_errors.dart';
 import '../models/user.dart' as user_model;
@@ -19,10 +18,7 @@ class UserManager {
       );
       onSuccess();
     } on FirebaseAuthException catch (e) {
-      print('FIREBASEAUTHEXCEPTION ERROR -> $e');
       onFail(getErrorString(e.code));
-    } catch (e) {
-      print('ERROR -> $e');
     }
   }
 }

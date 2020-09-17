@@ -1,22 +1,22 @@
 String getErrorString(String code) {
   switch (code) {
-    case 'ERROR_WEAK_PASSWORD':
+    case 'weak-password':
       return 'Your password is too weak.';
-    case 'ERROR_INVALID_EMAIL':
+    case 'invalid-email':
       return 'Your email is invalid.';
-    case 'ERROR_EMAIL_ALREADY_IN_USE':
+    case 'email-already-in-use':
       return 'E-mail is already being used in another account.';
-    case 'ERROR_INVALID_CREDENTIAL':
+    case 'invalid-credential':
       return 'Your email is invalid.';
-    case 'ERROR_WRONG_PASSWORD':
+    case 'wrong-password':
       return 'Your password is incorrect.';
-    case 'ERROR_USER_NOT_FOUND':
+    case 'user-not-found':
       return 'There is no user with this email.';
-    case 'ERROR_USER_DISABLED':
+    case 'user-disabled':
       return 'This user has been disabled.';
-    case 'ERROR_TOO_MANY_REQUESTS':
+    case 'too-many-requests':
       return 'Too many requests. Try again later.';
-    case 'ERROR_OPERATION_NOT_ALLOWED':
+    case 'operation-not-allowed':
       return 'Operation not allowed.';
 
     default:
