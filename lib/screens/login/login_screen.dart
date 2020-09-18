@@ -122,8 +122,7 @@ class LoginScreen extends StatelessWidget {
                                       );
                                     },
                                     onSuccess: () {
-                                      // TODO: CLOSE LOGIN SCREEN
-                                      print('Success');
+                                      Navigator.pop(context);
                                     },
                                   );
                                 }

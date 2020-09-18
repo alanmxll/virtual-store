@@ -19,6 +19,8 @@ class UserManager extends ChangeNotifier {
 
   bool get loading => _loading;
 
+  bool get isLoggedIn => user != null;
+
   set loading(bool value) {
     _loading = value;
     notifyListeners();
@@ -67,6 +69,14 @@ class UserManager extends ChangeNotifier {
       onFail(getErrorString(e.code));
     }
     loading = false;
+  }
+
+  void signOut() {
+    auth.signOut();
+
+    user = null;
+
+    notifyListeners();
   }
 
   Future<void> _loadCurrentUser({User firebaseUser}) async {

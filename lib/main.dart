@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 
 import 'models/user_manager.dart';
 import 'screens/base/base_screen.dart';
+import 'screens/login/login_screen.dart';
 import 'screens/signup/signup_screen.dart';
 
 Future<void> main() async {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => UserManager(),
+      lazy: false,
       child: MaterialApp(
         title: 'Virtual Store',
         debugShowCheckedModeBanner: false,
@@ -31,6 +33,10 @@ class MyApp extends StatelessWidget {
         initialRoute: '/base',
         onGenerateRoute: (settings) {
           switch (settings.name) {
+            case '/login':
+              return MaterialPageRoute(
+                builder: (_) => LoginScreen(),
+              );
             case '/signup':
               return MaterialPageRoute(
                 builder: (_) => SignUpScreen(),
