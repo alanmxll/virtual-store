@@ -26,135 +26,151 @@ class SignUpScreen extends StatelessWidget {
           ),
           child: Form(
             key: formKey,
-            child: ListView(
-              padding: const EdgeInsets.all(16.0),
-              shrinkWrap: true,
-              children: [
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Full name',
-                  ),
-                  validator: (name) {
-                    if (name.isEmpty) {
-                      return 'Required Field';
-                    } else if (name.trim().split(' ').length <= 1) {
-                      return 'Fill in your full name';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (name) => user.name = name,
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'E-mail',
-                  ),
-                  keyboardType: TextInputType.emailAddress,
-                  validator: (email) {
-                    if (email.isEmpty) {
-                      return 'Required Field';
-                    } else if (!emailValid(email)) {
-                      return 'Invalid E-mail';
-                    } else {
-                      return null;
-                    }
-                  },
-                  onSaved: (email) => user.email = email,
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Password',
-                  ),
-                  validator: (password) {
-                    if (password.isEmpty) {
-                      return 'Required Field';
-                    } else if (password.length < 6) {
-                      return 'Weak password';
-                    } else {
-                      return null;
-                    }
-                  },
-                  obscureText: true,
-                  onSaved: (password) => user.password = password,
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: 'Repeat Password',
-                  ),
-                  validator: (password) {
-                    if (password.isEmpty) {
-                      return 'Required Field';
-                    } else if (password.length < 6) {
-                      return 'Weak password';
-                    } else {
-                      return null;
-                    }
-                  },
-                  obscureText: true,
-                  onSaved: (password) => user.confirmPassword = password,
-                ),
-                const SizedBox(
-                  height: 16.0,
-                ),
-                SizedBox(
-                  height: 44.0,
-                  child: RaisedButton(
-                    color: Theme.of(context).primaryColor,
-                    disabledColor:
-                        Theme.of(context).primaryColor.withAlpha(100),
-                    textColor: Colors.white,
-                    onPressed: () {
-                      if (formKey.currentState.validate()) {
-                        formKey.currentState.save();
-
-                        if (user.password != user.confirmPassword) {
-                          scaffoldKey.currentState.showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                'Passwords do not match!',
-                              ),
-                              backgroundColor: Colors.red,
-                            ),
-                          );
-                          return;
-                        }
-
-                        context.read<UserManager>().signUp(
-                              user: user,
-                              onSuccess: () {
-                                Navigator.pop(context);
-                              },
-                              onFail: (e) {
-                                scaffoldKey.currentState.showSnackBar(
-                                  SnackBar(
-                                    content: Text(
-                                      'Sign Up failed: $e',
-                                    ),
-                                    backgroundColor: Colors.red,
-                                  ),
-                                );
-                              },
-                            );
-                      }
-                    },
-                    child: const Text(
-                      'Sign Up',
-                      style: TextStyle(
-                        fontSize: 18.0,
+            child: Consumer<UserManager>(
+              builder: (_, userManager, __) {
+                return ListView(
+                  padding: const EdgeInsets.all(16.0),
+                  shrinkWrap: true,
+                  children: [
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Full name',
                       ),
+                      enabled: !userManager.loading,
+                      validator: (name) {
+                        if (name.isEmpty) {
+                          return 'Required Field';
+                        } else if (name.trim().split(' ').length <= 1) {
+                          return 'Fill in your full name';
+                        } else {
+                          return null;
+                        }
+                      },
+                      onSaved: (name) => user.name = name,
                     ),
-                  ),
-                )
-              ],
+                    const SizedBox(
+                      height: 16.0,
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'E-mail',
+                      ),
+                      enabled: !userManager.loading,
+                      keyboardType: TextInputType.emailAddress,
+                      validator: (email) {
+                        if (email.isEmpty) {
+                          return 'Required Field';
+                        } else if (!emailValid(email)) {
+                          return 'Invalid E-mail';
+                        } else {
+                          return null;
+                        }
+                      },
+                      onSaved: (email) => user.email = email,
+                    ),
+                    const SizedBox(
+                      height: 16.0,
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Password',
+                      ),
+                      enabled: !userManager.loading,
+                      validator: (password) {
+                        if (password.isEmpty) {
+                          return 'Required Field';
+                        } else if (password.length < 6) {
+                          return 'Weak password';
+                        } else {
+                          return null;
+                        }
+                      },
+                      obscureText: true,
+                      onSaved: (password) => user.password = password,
+                    ),
+                    const SizedBox(
+                      height: 16.0,
+                    ),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        hintText: 'Repeat Password',
+                      ),
+                      enabled: !userManager.loading,
+                      validator: (password) {
+                        if (password.isEmpty) {
+                          return 'Required Field';
+                        } else if (password.length < 6) {
+                          return 'Weak password';
+                        } else {
+                          return null;
+                        }
+                      },
+                      obscureText: true,
+                      onSaved: (password) => user.confirmPassword = password,
+                    ),
+                    const SizedBox(
+                      height: 16.0,
+                    ),
+                    SizedBox(
+                      height: 44.0,
+                      child: RaisedButton(
+                        color: Theme.of(context).primaryColor,
+                        disabledColor:
+                            Theme.of(context).primaryColor.withAlpha(100),
+                        textColor: Colors.white,
+                        onPressed: userManager.loading
+                            ? null
+                            : () {
+                                if (formKey.currentState.validate()) {
+                                  formKey.currentState.save();
+
+                                  if (user.password != user.confirmPassword) {
+                                    scaffoldKey.currentState.showSnackBar(
+                                      const SnackBar(
+                                        content: Text(
+                                          'Passwords do not match!',
+                                        ),
+                                        backgroundColor: Colors.red,
+                                      ),
+                                    );
+                                    return;
+                                  }
+
+                                  userManager.signUp(
+                                    user: user,
+                                    onSuccess: () {
+                                      Navigator.pop(context);
+                                    },
+                                    onFail: (e) {
+                                      scaffoldKey.currentState.showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                            'Sign Up failed: $e',
+                                          ),
+                                          backgroundColor: Colors.red,
+                                        ),
+                                      );
+                                    },
+                                  );
+                                }
+                              },
+                        child: userManager.loading
+                            ? const CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation(
+                                  Colors.white,
+                                ),
+                              )
+                            : const Text(
+                                'Sign Up',
+                                style: TextStyle(
+                                  fontSize: 18.0,
+                                ),
+                              ),
+                      ),
+                    )
+                  ],
+                );
+              },
             ),
           ),
         ),
