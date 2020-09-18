@@ -20,6 +20,23 @@ class LoginScreen extends StatelessWidget {
           'Login',
         ),
         centerTitle: true,
+        actions: [
+          FlatButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(
+                context,
+                '/signup',
+              );
+            },
+            textColor: Colors.white,
+            child: const Text(
+              'SIGN UP',
+              style: TextStyle(
+                fontSize: 14.0,
+              ),
+            ),
+          )
+        ],
       ),
       body: Center(
         child: Card(
@@ -105,8 +122,7 @@ class LoginScreen extends StatelessWidget {
                                       );
                                     },
                                     onSuccess: () {
-                                      // TODO: CLOSE LOGIN SCREEN
-                                      print('Success');
+                                      Navigator.pop(context);
                                     },
                                   );
                                 }
