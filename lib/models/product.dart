@@ -18,6 +18,18 @@ class Product extends ChangeNotifier {
     notifyListeners();
   }
 
+  int get totalStock {
+    int stock = 0;
+
+    for (final size in sizes) {
+      stock += size.stock;
+    }
+
+    return stock;
+  }
+
+  bool get hasStock => totalStock > 0;
+
   Product.fromDocument(DocumentSnapshot document) {
     id = document.id;
     name = document.data()['name'] as String;

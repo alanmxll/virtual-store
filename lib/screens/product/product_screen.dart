@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/product.dart';
+import '../../models/user_manager.dart';
 import 'components/size_widget.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -40,7 +41,7 @@ class ProductScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
                     product.name,
@@ -105,6 +106,40 @@ class ProductScreen extends StatelessWidget {
                     children: product.sizes.map((size) {
                       return SizeWidget(size: size);
                     }).toList(),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  Visibility(
+                    visible: product.hasStock,
+                    child: Consumer2<UserManager, Product>(
+                      builder: (_, userManager, product, __) {
+                        return SizedBox(
+                          height: 44.0,
+                          child: RaisedButton(
+                            onPressed: product.selectedSize != null
+                                ? () {
+                                    if (userManager.isLoggedIn) {
+                                      // TODO: ADD TO CART
+                                    } else {
+                                      Navigator.pushNamed(context, '/login');
+                                    }
+                                  }
+                                : null,
+                            color: _primaryColor,
+                            textColor: Colors.white,
+                            child: Text(
+                              userManager.isLoggedIn
+                                  ? 'Add to Cart'
+                                  : 'Sign In to Buy',
+                              style: const TextStyle(
+                                fontSize: 18.0,
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ],
               ),
