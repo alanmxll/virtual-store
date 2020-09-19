@@ -10,7 +10,7 @@ class ProductManager extends ChangeNotifier {
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  static List<Product> allProducts = [];
+  List<Product> allProducts = [];
 
   Future<void> _loadAllProducts() async {
     final QuerySnapshot snapProducts =
