@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../common/custom_drawer/custom_drawer.dart';
 import '../../models/page_manager.dart';
+import '../products/products_screen.dart';
 
 class BaseScreen extends StatelessWidget {
   final PageController pageController = PageController();
@@ -21,12 +22,7 @@ class BaseScreen extends StatelessWidget {
             ),
             drawer: CustomDrawer(),
           ),
-          Scaffold(
-            appBar: AppBar(
-              title: const Text('Products'),
-            ),
-            drawer: CustomDrawer(),
-          ),
+          ProductsScreen(),
           Scaffold(
             appBar: AppBar(
               title: const Text('My Orders'),
