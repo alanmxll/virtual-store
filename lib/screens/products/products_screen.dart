@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:virtual_store/screens/products/components/product_list_tile.dart';
 
 import '../../common/custom_drawer/custom_drawer.dart';
 import '../../models/product_manager.dart';
+import 'components/product_list_tile.dart';
+import 'components/search_dialog.dart';
 
 class ProductsScreen extends StatelessWidget {
   @override
@@ -12,6 +13,19 @@ class ProductsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Products'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (_) {
+                  return SearchDialog();
+                },
+              );
+            },
+          )
+        ],
       ),
       drawer: CustomDrawer(),
       body: Consumer<ProductManager>(
