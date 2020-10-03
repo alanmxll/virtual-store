@@ -30,6 +30,14 @@ class Product extends ChangeNotifier {
 
   bool get hasStock => totalStock > 0;
 
+  ItemSize findSize(String name) {
+    try {
+      return sizes.firstWhere((s) => s.name == name);
+    } catch (e) {
+      return null;
+    }
+  }
+
   Product.fromDocument(DocumentSnapshot document) {
     id = document.id;
     name = document.data()['name'] as String;
