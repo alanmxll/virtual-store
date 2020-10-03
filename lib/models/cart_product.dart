@@ -5,6 +5,8 @@ import 'item_size.dart';
 import 'product.dart';
 
 class CartProduct extends ChangeNotifier {
+  String id;
+
   String productId;
   String size;
   int quantity;
@@ -56,6 +58,7 @@ class CartProduct extends ChangeNotifier {
   }
 
   CartProduct.fromDocument(DocumentSnapshot document) {
+    id = document.id;
     productId = document.data()['pid'] as String;
     quantity = document.data()['quantity'] as int;
     size = document.data()['size'] as String;
