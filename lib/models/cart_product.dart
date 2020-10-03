@@ -1,9 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 
 import 'item_size.dart';
 import 'product.dart';
 
-class CartProduct {
+class CartProduct extends ChangeNotifier {
   String productId;
   String size;
   int quantity;
@@ -36,6 +37,16 @@ class CartProduct {
 
   bool stackable(Product product) {
     return product.id == productId && product.selectedSize.name == size;
+  }
+
+  void increment() {
+    quantity++;
+    notifyListeners();
+  }
+
+  void decrement() {
+    quantity--;
+    notifyListeners();
   }
 
   CartProduct.fromProduct(this.product) {
