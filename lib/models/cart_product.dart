@@ -26,6 +26,18 @@ class CartProduct {
     }
   }
 
+  Map<String, dynamic> toCartItemMap() {
+    return {
+      'pid': productId,
+      'quantity': quantity,
+      'size': size,
+    };
+  }
+
+  bool stackable(Product product) {
+    return product.id == productId && product.selectedSize.name == size;
+  }
+
   CartProduct.fromProduct(this.product) {
     productId = product.id;
     quantity = 1;
