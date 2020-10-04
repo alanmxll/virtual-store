@@ -2,10 +2,12 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'models/cart_manager.dart';
 import 'models/product.dart';
 import 'models/product_manager.dart';
 import 'models/user_manager.dart';
 import 'screens/base/base_screen.dart';
+import 'screens/cart/cart_screen.dart';
 import 'screens/login/login_screen.dart';
 import 'screens/product/product_screen.dart';
 import 'screens/signup/signup_screen.dart';
@@ -28,6 +30,12 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
           create: (_) => ProductManager(),
           lazy: false,
+        ),
+        ChangeNotifierProxyProvider<UserManager, CartManager>(
+          create: (_) => CartManager(),
+          lazy: false,
+          update: (_, userManager, cartManager) =>
+              cartManager..updateUser(userManager),
         ),
       ],
       child: MaterialApp(
@@ -57,6 +65,10 @@ class MyApp extends StatelessWidget {
                 builder: (_) => ProductScreen(
                   product: settings.arguments as Product,
                 ),
+              );
+            case '/cart':
+              return MaterialPageRoute(
+                builder: (_) => CartScreen(),
               );
             case '/base':
             default:

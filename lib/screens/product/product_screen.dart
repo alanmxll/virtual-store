@@ -2,6 +2,7 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../models/cart_manager.dart';
 import '../../models/product.dart';
 import '../../models/user_manager.dart';
 import 'components/size_widget.dart';
@@ -120,7 +121,10 @@ class ProductScreen extends StatelessWidget {
                             onPressed: product.selectedSize != null
                                 ? () {
                                     if (userManager.isLoggedIn) {
-                                      // TODO: ADD TO CART
+                                      context
+                                          .read<CartManager>()
+                                          .addToCart(product);
+                                      Navigator.pushNamed(context, '/cart');
                                     } else {
                                       Navigator.pushNamed(context, '/login');
                                     }
