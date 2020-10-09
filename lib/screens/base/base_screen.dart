@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../../common/custom_drawer/custom_drawer.dart';
 import '../../models/page_manager.dart';
+import '../home/home_screen.dart';
 import '../products/products_screen.dart';
 
 class BaseScreen extends StatelessWidget {
@@ -16,12 +17,7 @@ class BaseScreen extends StatelessWidget {
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          Scaffold(
-            appBar: AppBar(
-              title: const Text('Home'),
-            ),
-            drawer: CustomDrawer(),
-          ),
+          HomeScreen(),
           ProductsScreen(),
           Scaffold(
             appBar: AppBar(
