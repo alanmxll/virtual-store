@@ -40,6 +40,8 @@ dependencies:
   carousel_pro: ^1.0.0
   # A Flutter staggered grid view which supports multiple columns with rows of varying sizes.
   flutter_staggered_grid_view: ^0.3.2
+  # A simple transparent image. Represented as a Uint8List
+  transparent_image: ^1.0.0
 
 dev_dependencies:
   flutter_test:
