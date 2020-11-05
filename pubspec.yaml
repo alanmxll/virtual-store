@@ -43,6 +43,11 @@ dependencies:
   provider: ^4.3.2+2
   # A simple transparent image. Represented as a Uint8List
   transparent_image: ^1.0.0
+  # A customizable listview with A-Z side scrollbar to fast jump to the item of the selected character.
+  # Quick scroll through list via dragging through alphabets.
+  alphabet_list_scroll_view: ^1.0.6
+  # A library for Dart that generates fake data.
+  faker: ^1.2.1
 
 dev_dependencies:
   flutter_test:
