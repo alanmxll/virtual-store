@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:virtual_store/common/custom_drawer/custom_drawer_header.dart';
+import 'package:provider/provider.dart';
 
+import '../../models/user_manager.dart';
+import 'custom_drawer_header.dart';
 import 'drawer_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -45,6 +47,29 @@ class CustomDrawer extends StatelessWidget {
                 title: 'Stores',
                 page: 3,
               ),
+              Consumer<UserManager>(
+                builder: (_, userManager, __) {
+                  if (userManager.adminEnabled) {
+                    return Column(
+                      children: const [
+                        Divider(),
+                        DrawerTile(
+                          iconData: Icons.settings,
+                          title: 'Users',
+                          page: 4,
+                        ),
+                        DrawerTile(
+                          iconData: Icons.settings,
+                          title: 'Orders',
+                          page: 5,
+                        ),
+                      ],
+                    );
+                  } else {
+                    return Container();
+                  }
+                },
+              )
             ],
           ),
         ],
