@@ -2,6 +2,7 @@ import 'package:alphabet_list_scroll_view/alphabet_list_scroll_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../common/custom_drawer/custom_drawer.dart';
 import '../../models/admin_users_manager.dart';
 
 class AdminUsersScreen extends StatelessWidget {
@@ -42,6 +43,7 @@ class AdminUsersScreen extends StatelessWidget {
           );
         },
       ),
+      drawer: CustomDrawer(),
     );
   }
 }
