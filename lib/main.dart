@@ -1,8 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:virtual_store/models/admin_users_manager.dart';
 
+import 'models/admin_users_manager.dart';
 import 'models/cart_manager.dart';
 import 'models/home_manager.dart';
 import 'models/product.dart';
@@ -10,6 +10,7 @@ import 'models/product_manager.dart';
 import 'models/user_manager.dart';
 import 'screens/base/base_screen.dart';
 import 'screens/cart/cart_screen.dart';
+import 'screens/edit_product/edit_product_screen.dart';
 import 'screens/login/login_screen.dart';
 import 'screens/product/product_screen.dart';
 import 'screens/signup/signup_screen.dart';
@@ -81,6 +82,10 @@ class MyApp extends StatelessWidget {
             case '/cart':
               return MaterialPageRoute(
                 builder: (_) => CartScreen(),
+              );
+            case '/edit_product':
+              return MaterialPageRoute(
+                builder: (_) => EditProductScreen(),
               );
             case '/base':
             default:

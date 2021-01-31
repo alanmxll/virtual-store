@@ -28,7 +28,9 @@ class ProductScreen extends StatelessWidget {
                 if (userManager.adminEnabled) {
                   return IconButton(
                     icon: const Icon(Icons.edit),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(context, '/edit_product');
+                    },
                   );
                 } else {
                   return Container();
