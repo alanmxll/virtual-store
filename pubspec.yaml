@@ -3,7 +3,7 @@ description: A new Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -21,25 +21,26 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
+  # A Flutter Carousel widget.
+  carousel_pro: ^1.0.0
+  # A Flutter plugin to use the Cloud Firestore API.
+  cloud_firestore: ^0.14.0+2
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
-  # A Flutter plugin to use the Cloud Firestore API.
-  cloud_firestore: ^0.14.0+2
   # A Flutter plugin to use the Firebase Authentication API.
   firebase_auth: ^0.18.0+1
-  # A Flutter plugin to use the Firebase Cloud Storage API.
-  firebase_storage: ^4.0.0
   # A Flutter plugin to use the Firebase Core API
   firebase_core: ^0.5.0
-  # A wrapper around InheritedWidget to make them easier to use and more reusable.
-  provider: ^4.3.2+2
-  # A Flutter Carousel widget.
-  carousel_pro: ^1.0.0
+  # A Flutter plugin to use the Firebase Cloud Storage API.
+  firebase_storage: ^4.0.0
+  # Flutter SDK
+  flutter:
+    sdk: flutter
   # A Flutter staggered grid view which supports multiple columns with rows of varying sizes.
   flutter_staggered_grid_view: ^0.3.2
+  # A wrapper around InheritedWidget to make them easier to use and more reusable.
+  provider: ^4.3.2+2
   # A simple transparent image. Represented as a Uint8List
   transparent_image: ^1.0.0
 
@@ -54,7 +55,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
