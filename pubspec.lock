@@ -14,30 +14,14 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "2.5.0-nullsafety.3"
-=======
-    version: "2.5.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "2.5.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   boolean_selector:
     dependency: transitive
     description:
       name: boolean_selector
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "2.1.0-nullsafety.3"
-=======
-    version: "2.1.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "2.1.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   carousel_pro:
     dependency: "direct main"
     description:
@@ -51,81 +35,49 @@ packages:
       name: characters
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.1.0-nullsafety.5"
-=======
-    version: "1.1.0-nullsafety.3"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.1.0-nullsafety.3"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   charcode:
     dependency: transitive
     description:
       name: charcode
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.2.0-nullsafety.3"
-=======
-    version: "1.2.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.2.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   clock:
     dependency: transitive
     description:
       name: clock
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.1.0-nullsafety.3"
-=======
-    version: "1.1.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.1.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   cloud_firestore:
     dependency: "direct main"
     description:
       name: cloud_firestore
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.14.0+2"
+    version: "0.14.4"
   cloud_firestore_platform_interface:
     dependency: transitive
     description:
       name: cloud_firestore_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.2.1"
   cloud_firestore_web:
     dependency: transitive
     description:
       name: cloud_firestore_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0+1"
+    version: "0.2.1+2"
   collection:
     dependency: transitive
     description:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.15.0-nullsafety.5"
-=======
-    version: "1.15.0-nullsafety.3"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.15.0-nullsafety.3"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -139,80 +91,63 @@ packages:
       name: fake_async
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.2.0-nullsafety.3"
-=======
-=======
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
-    version: "1.2.0-nullsafety.1"
   faker:
     dependency: "direct main"
     description:
       name: faker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.1"
-<<<<<<< HEAD
->>>>>>> an alphabetical list of fake users created
-=======
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
-  firebase:
-    dependency: transitive
-    description:
-      name: firebase
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "7.3.0"
+    version: "1.3.0"
   firebase_auth:
     dependency: "direct main"
     description:
       name: firebase_auth
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.18.0+1"
+    version: "0.18.4+1"
   firebase_auth_platform_interface:
     dependency: transitive
     description:
       name: firebase_auth_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.1.4"
   firebase_auth_web:
     dependency: transitive
     description:
       name: firebase_auth_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.0+1"
+    version: "0.3.2+3"
   firebase_core:
     dependency: "direct main"
     description:
       name: firebase_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.0"
+    version: "0.5.3"
   firebase_core_platform_interface:
     dependency: transitive
     description:
       name: firebase_core_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "2.1.0"
   firebase_core_web:
     dependency: transitive
     description:
       name: firebase_core_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "0.2.1+1"
   firebase_storage:
     dependency: "direct main"
     description:
       name: firebase_storage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0"
+    version: "4.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -224,7 +159,7 @@ packages:
       name: flutter_staggered_grid_view
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.2"
+    version: "0.3.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -235,13 +170,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  http:
-    dependency: transitive
-    description:
-      name: http
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.12.2"
   http_parser:
     dependency: transitive
     description:
@@ -269,37 +197,21 @@ packages:
       name: lint
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.0"
+    version: "1.5.1"
   matcher:
     dependency: transitive
     description:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "0.12.10-nullsafety.3"
-=======
-    version: "0.12.10-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "0.12.10-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   meta:
     dependency: transitive
     description:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.3.0-nullsafety.6"
-=======
-    version: "1.3.0-nullsafety.3"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.3.0-nullsafety.3"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   nested:
     dependency: transitive
     description:
@@ -313,43 +225,28 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.8.0-nullsafety.3"
-=======
-    version: "1.8.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.8.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.9.0"
   plugin_platform_interface:
     dependency: transitive
     description:
       name: plugin_platform_interface
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   provider:
     dependency: "direct main"
     description:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.3.2+2"
+    version: "4.3.3"
   quiver:
     dependency: transitive
     description:
       name: quiver
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.3"
+    version: "2.1.5"
   rxdart:
     dependency: transitive
     description:
@@ -368,90 +265,42 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.8.0-nullsafety.4"
-=======
-    version: "1.8.0-nullsafety.2"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.8.0-nullsafety.2"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   stack_trace:
     dependency: transitive
     description:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.10.0-nullsafety.6"
-=======
-    version: "1.10.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.10.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   stream_channel:
     dependency: transitive
     description:
       name: stream_channel
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "2.1.0-nullsafety.3"
-=======
-    version: "2.1.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "2.1.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   string_scanner:
     dependency: transitive
     description:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.1.0-nullsafety.3"
-=======
-    version: "1.1.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.1.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   term_glyph:
     dependency: transitive
     description:
       name: term_glyph
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.2.0-nullsafety.3"
-=======
-    version: "1.2.0-nullsafety.1"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.2.0-nullsafety.1"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   test_api:
     dependency: transitive
     description:
       name: test_api
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "0.2.19-nullsafety.6"
-=======
-    version: "0.2.19-nullsafety.2"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "0.2.19-nullsafety.2"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   transparent_image:
     dependency: "direct main"
     description:
@@ -465,38 +314,21 @@ packages:
       name: typed_data
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "1.3.0-nullsafety.5"
-=======
-    version: "1.3.0-nullsafety.3"
->>>>>>> an alphabetical list of fake users created
-=======
-    version: "1.3.0-nullsafety.3"
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
   vector_math:
     dependency: transitive
     description:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "2.1.0-nullsafety.5"
-sdks:
-  dart: ">=2.12.0-0.0 <3.0.0"
-  flutter: ">=1.17.0"
-=======
-=======
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
-    version: "2.1.0-nullsafety.3"
   vibration:
     dependency: transitive
     description:
       name: vibration
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.1"
+    version: "1.7.3"
   vibration_web:
     dependency: transitive
     description:
@@ -505,9 +337,5 @@ sdks:
     source: hosted
     version: "1.6.2"
 sdks:
-  dart: ">=2.10.0-110 <2.11.0"
-  flutter: ">=1.20.0 <2.0.0"
-<<<<<<< HEAD
->>>>>>> an alphabetical list of fake users created
-=======
->>>>>>> dc0b7865ef83acb08cb3b8a9a9af3fe91b646174
+  dart: ">=2.12.0-0.0 <3.0.0"
+  flutter: ">=1.20.0"
