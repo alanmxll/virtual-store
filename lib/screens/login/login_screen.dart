@@ -21,14 +21,14 @@ class LoginScreen extends StatelessWidget {
         ),
         centerTitle: true,
         actions: [
-          FlatButton(
+          TextButton(
             onPressed: () {
               Navigator.pushReplacementNamed(
                 context,
                 '/signup',
               );
             },
-            textColor: Colors.white,
+            style: TextButton.styleFrom(primary: Colors.white),
             child: const Text(
               'SIGN UP',
               style: TextStyle(
@@ -88,9 +88,12 @@ class LoginScreen extends StatelessWidget {
                     ),
                     Align(
                       alignment: Alignment.centerRight,
-                      child: FlatButton(
+                      child: TextButton(
                         onPressed: () {},
-                        padding: EdgeInsets.zero,
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                          primary: Colors.black,
+                        ),
                         child: const Text(
                           'Forgot my password',
                         ),
@@ -101,7 +104,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 45.0,
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         onPressed: userManager.loading
                             ? null
                             : () {
@@ -127,10 +130,23 @@ class LoginScreen extends StatelessWidget {
                                   );
                                 }
                               },
-                        color: Theme.of(context).primaryColor,
-                        disabledColor:
-                            Theme.of(context).primaryColor.withAlpha(100),
-                        textColor: Colors.white,
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              Theme.of(context).primaryColor),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          overlayColor:
+                              MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.disabled)) {
+                                return Theme.of(context)
+                                    .primaryColor
+                                    .withAlpha(100);
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
                         child: userManager.loading
                             ? const CircularProgressIndicator(
                                 valueColor: AlwaysStoppedAnimation(

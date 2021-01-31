@@ -113,11 +113,23 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     SizedBox(
                       height: 44.0,
-                      child: RaisedButton(
-                        color: Theme.of(context).primaryColor,
-                        disabledColor:
-                            Theme.of(context).primaryColor.withAlpha(100),
-                        textColor: Colors.white,
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: MaterialStateProperty.all(
+                              Theme.of(context).primaryColor),
+                          foregroundColor:
+                              MaterialStateProperty.all(Colors.white),
+                          overlayColor: MaterialStateProperty.resolveWith(
+                            (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.disabled)) {
+                                return Theme.of(context)
+                                    .primaryColor
+                                    .withAlpha(100);
+                              }
+                              return null;
+                            },
+                          ),
+                        ),
                         onPressed: userManager.loading
                             ? null
                             : () {
