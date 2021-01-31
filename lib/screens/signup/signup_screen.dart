@@ -137,7 +137,7 @@ class SignUpScreen extends StatelessWidget {
                                   formKey.currentState.save();
 
                                   if (user.password != user.confirmPassword) {
-                                    scaffoldKey.currentState.showSnackBar(
+                                    ScaffoldMessenger.of(context).showSnackBar(
                                       const SnackBar(
                                         content: Text(
                                           'Passwords do not match!',
@@ -154,7 +154,8 @@ class SignUpScreen extends StatelessWidget {
                                       Navigator.pop(context);
                                     },
                                     onFail: (e) {
-                                      scaffoldKey.currentState.showSnackBar(
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
                                         SnackBar(
                                           content: Text(
                                             'Sign Up failed: $e',

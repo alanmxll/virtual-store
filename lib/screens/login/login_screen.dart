@@ -115,7 +115,8 @@ class LoginScreen extends StatelessWidget {
                                       password: passwordController.text,
                                     ),
                                     onFail: (e) {
-                                      scaffoldKey.currentState.showSnackBar(
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
                                         SnackBar(
                                           content: Text(
                                             'Login failed: $e',
