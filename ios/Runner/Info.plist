@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>virtual_store</string>
+	<string>Virtual Store</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -41,5 +41,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Access gallery to find image</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access camera to add image</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Access microphone do add audio</string>
 </dict>
 </plist>

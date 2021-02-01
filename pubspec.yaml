@@ -44,6 +44,9 @@ dependencies:
     sdk: flutter
   # A Flutter staggered grid view which supports multiple columns with rows of varying sizes.
   flutter_staggered_grid_view: ^0.3.2
+  # A Flutter plugin for iOS and Android for picking images from the library,
+  # and taking new pictures with the camera.
+  image_picker: ^0.6.7
   # A wrapper around InheritedWidget to make them easier to use and more reusable.
   provider: ^4.3.2+2
   # A simple transparent image. Represented as a Uint8List
