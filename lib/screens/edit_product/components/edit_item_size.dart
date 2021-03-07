@@ -28,6 +28,13 @@ class EditItemSize extends StatelessWidget {
               labelText: 'Title',
               isDense: true,
             ),
+            validator: (name) {
+              if (name.isEmpty) {
+                return "Invalid";
+              }
+              return null;
+            },
+            onChanged: (name) => size.name = name,
           ),
         ),
         const SizedBox(
@@ -42,6 +49,13 @@ class EditItemSize extends StatelessWidget {
               isDense: true,
             ),
             keyboardType: TextInputType.number,
+            validator: (stock) {
+              if (int.tryParse(stock) == null) {
+                return "Invalid";
+              }
+              return null;
+            },
+            onChanged: (stock) => size.stock = int.tryParse(stock),
           ),
         ),
         const SizedBox(
@@ -57,6 +71,13 @@ class EditItemSize extends StatelessWidget {
               prefixText: 'U\$',
             ),
             keyboardType: const TextInputType.numberWithOptions(decimal: true),
+            validator: (price) {
+              if (num.tryParse(price) == null) {
+                return "Invalid";
+              }
+              return null;
+            },
+            onChanged: (price) => size.price = num.tryParse(price),
           ),
         ),
         CustomIconButton(

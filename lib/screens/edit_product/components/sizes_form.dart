@@ -14,6 +14,12 @@ class SizesForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return FormField<List<ItemSize>>(
       initialValue: List.from(product.sizes),
+      validator: (sizes) {
+        if (sizes.isEmpty) {
+          return 'Insert a size';
+        }
+        return null;
+      },
       builder: (state) {
         return Column(
           children: [
@@ -66,6 +72,17 @@ class SizesForm extends StatelessWidget {
                 );
               }).toList(),
             ),
+            if (state.hasError)
+              Container(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  state.errorText,
+                  style: const TextStyle(
+                    color: Colors.red,
+                    fontSize: 12,
+                  ),
+                ),
+              ),
           ],
         );
       },
